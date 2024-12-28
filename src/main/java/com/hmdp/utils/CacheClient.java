@@ -79,7 +79,7 @@ public class CacheClient {
         String json = stringRedisTemplate.opsForValue().get(key);
         // 2.判断是否存在
         if (StrUtil.isBlank(json)) {
-            // 3.存在，直接返回
+            // 3.不存在，直接返回
             return null;
         }
         // 4.命中，需要先把json反序列化为对象
